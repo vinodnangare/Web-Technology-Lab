@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+   #container{
+     border:2px solid black;
+     width: 305px;
+     justify-content: center;
+     margin-left: 620px;
+     margin-top: 10px;
+     background-color: BLACK;
+     border-radius: 10px;
+     height:610px;
+   }
+
+        .btn-num{
+           background-color: rgb(209, 209, 209);
+           width: 90px;
+           height: 70px;
+           margin-left: 5px;
+           margin-top: 10px;
+           font-size: larger;
+           border-radius: 10px;
+           cursor: pointer;
+        }
+        .btn-opt{
+            background-color: rgb(191, 213, 66);
+           width: 90px;
+           height: 70px;
+           margin-left: 5px;
+           font-size: larger;
+           border-radius: 10px;
+           cursor: pointer;
+           
+           margin-top: 10px;
+
+        }
+        #display{
+            height: 80px;
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 278px;
+            background-color: aquamarine;
+            font-size: 30px;
+            text-align: right;
+        }
+        .btn-opt-ac{
+            background-color: rgb(191, 213, 66);
+           width: 90px;
+           height: 70px;
+           margin-left: 5px;
+           font-size: larger;
+           border-radius: 10px;
+           cursor: pointer;
+           
+           margin-top: 10px;
+        
+        }
+        .h1{
+            font-size: 60px;
+        }
+        .btn-cl{
+            background-color: rgb(255, 78, 78);
+            width: 90px;
+           height: 70px;
+           margin-left: 5px;
+           font-size: larger;
+           border-radius: 10px;
+           cursor: pointer;
+           
+           margin-top: 10px;
+        }
+        .btn-eq{
+            background-color: rgb(21, 161, 254);
+            width: 90px;
+           height: 70px;
+           margin-left: 5px;
+           font-size: larger;
+           border-radius: 10px;
+           cursor: pointer;
+           
+           margin-top: 10px;  
+        }
+    </style>
+<!--
+    <script>
+  function f11(value){
+    const a=parseInt(document.f1.t1.value);
+    document.f1.t1.value +=val;
+    const b=12;
+    const c=a+b;
+    console.log(c);
+    
+    const displays=getElementByID("display");
+    displays.innerHTML=(`${a}`);
+  }
+    </script>
+    -->
+</head>
+<body>
+    <center><h1>Calculator</h1></center>
+    <div id="container">
+        <form name="f1">
+        <table>
+            <tr>
+                    <input type="text" name="t1" value="" id="display" />
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="b1" value="0" class="btn-num" onclick="t1.value+='0'">
+                </td>
+                <td>
+                    <input type="button" name="b2" value="1" class="btn-num" onclick="t1.value+='1'">
+                </td>
+                <td>
+                    <input type="button" name="b3" value="2" class="btn-num" onclick="t1.value+='2'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="b4" value="3" class="btn-num" onclick="t1.value+='3'" >
+                </td>
+                <td>
+                    <input type="button" name="b5" value="4" class="btn-num" onclick="t1.value+='4'">
+                </td>
+                <td>
+                    <input type="button" name="b6" value="5" class="btn-num" onclick="t1.value+='5'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="b7" value="6" class="btn-num" onclick="t1.value+='6'">
+                </td>
+                <td>
+                    <input type="button" name="b8" value="7" class="btn-num" onclick="t1.value+='7'">
+                </td>
+                <td>
+                    <input type="button" name="b9" value="8" class="btn-num" onclick="t1.value+='8'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="b10" value="9" class="btn-num" onclick="t1.value+='9'">
+                </td>
+                <td>
+                    <input type="button" name="b11" value="+" class="btn-opt" onclick="t1.value+='+'">
+                </td>
+                <td>
+                    <input type="button" name="12" value="-" class="btn-opt" onclick="t1.value+='-'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="b13" value="*" class="btn-opt" onclick="t1.value+='*'">
+                </td>
+                <td>
+                    <input type="button" name="b14" value="/" class="btn-opt" onclick="t1.value+='/'">
+                </td>
+                <td>
+                   <input type="button" name="b17" value="." class="btn-opt" onclick="t1.value+='.'">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="b15" value="AC" class="btn-cl" onclick="t1.value=''">
+                </td>
+                <td>
+                    <input type="button" name="b16" value="DEL" class="btn-cl" onclick="t1.value=''">
+                </td>
+                <td>
+                    <input type="button" name="b15" value="=" class="btn-eq" onclick="t1.value=eval(t1.value).toFixed(2)"> 
+                </td>
+            </tr>
+           
+        </table>
+    </form>
+    </div>
+    
+</body>
+</html>
