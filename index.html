@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Management</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .menu button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        .menu button:hover {
+            background-color: #45a049;
+        }
+        form {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        form label {
+            font-size: 1.1em;
+            margin: 10px 0;
+            display: block;
+        }
+        form input[type="text"],
+        form input[type="number"],
+        form input[type="hidden"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        form button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+        .form-title {
+            text-align: center;
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Book Management</h2>
+
+<div class="menu">
+    <button onclick="showForm('insert')">Insert</button>
+    <button onclick="showForm('delete')">Delete</button>
+    <button onclick="showForm('update')">Update</button>
+    <button onclick="submitDisplay()">Display</button>
+</div>
+
+<!-- Insert Book Form -->
+<form id="insertForm" method="POST" action="book">
+    <div class="form-title">Insert a New Book</div>
+    <input type="hidden" name="action" value="insert">
+    <label>Book ID: <input type="text" name="id" required></label>
+    <label>Title: <input type="text" name="title" required></label>
+    <label>Author: <input type="text" name="author" required></label>
+    <label>Price: <input type="number" name="price" step="0.01" required></label>
+    <label>Quantity: <input type="number" name="qty" required></label>
+    <button type="submit">Insert Book</button>
+</form>
+
+<!-- Delete Book Form -->
+<form id="deleteForm" method="POST" action="book">
+    <div class="form-title">Delete a Book</div>
+    <input type="hidden" name="action" value="delete">
+    <label>Book ID to Delete: <input type="text" name="id" required></label>
+    <button type="submit">Delete Book</button>
+</form>
+
+<!-- Update Book Form -->
+<form id="updateForm" method="POST" action="book">
+    <div class="form-title">Update Book Details</div>
+    <input type="hidden" name="action" value="update">
+    <label>Book ID: <input type="text" name="id" required></label>
+    <label>New Title: <input type="text" name="title" required></label>
+    <label>New Author: <input type="text" name="author" required></label>
+    <label>New Price: <input type="number" name="price" step="0.01" required></label>
+    <label>New Quantity: <input type="number" name="qty" required></label>
+    <button type="submit">Update Book</button>
+</form>
+
+<!-- Display Book Form -->
+<form id="displayForm" method="GET" action="book">
+    <input type="hidden" name="action" value="display">
+</form>
+
+<script>
+    function showForm(formId) {
+        document.querySelectorAll('form').forEach(f => f.style.display = 'none');
+        document.getElementById(formId + 'Form').style.display = 'block';
+    }
+
+    function submitDisplay() {
+        document.getElementById("displayForm").submit();
+    }
+</script>
+
+</body>
+</html>
